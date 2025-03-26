@@ -102,10 +102,15 @@ public class SayaTubeUser
 
     public void PrintAllVideoPlayCount()
     {
-       Console.WriteLine($"User: {this.username}");
+        Console.WriteLine($"User: {this.username}");
         for (int i = 0; i < uploadedVideos.Count; i++)
         {
             Console.WriteLine($"Video {i + 1} judul: {uploadedVideos[i].GetTitle()}, Play Count: {uploadedVideos[i].GetPlayCount()}");
+        }
+        if (uploadedVideos.Count > 8)
+        {
+            int remainingVideos = uploadedVideos.Count - 8;
+            Console.WriteLine($"Dan {remainingVideos} video lainnya tak di tampilkan.");
         }
     }
 }
